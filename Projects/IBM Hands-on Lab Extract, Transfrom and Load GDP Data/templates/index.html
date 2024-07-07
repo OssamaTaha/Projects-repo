@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL Process</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">ETL Process for Country GDP Data</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="url">URL</label>
+                <input type="text" class="form-control" id="url" name="url" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Run ETL Process</button>
+        </form>
+        <div class="mt-5">
+            {% if tables %}
+                <h2 class="text-center">Query Results</h2>
+                <div class="table-responsive">
+                    {{ tables|safe }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
